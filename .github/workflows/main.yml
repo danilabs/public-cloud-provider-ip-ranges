@@ -1,51 +1,68 @@
-name: Gather public IP address ranges data from different public cloud providers 
+name: Gather public IP address ranges data from public cloud providers
 
 on:
   workflow_dispatch:
-    
+
   schedule:
-    # Run everyday at 4AM UTC
-    - cron:  '0 4 * * *'
+    - cron: '0 4 * * *'
+
+permissions:
+  contents: write  # only content write for commits
+  actions: read    # minimal for workflows
+
+concurrency:
+  group: data-gathering
+  cancel-in-progress: true
 
 jobs:
-
   gather_and_transform_data:
-    name: 
+    name: Gather and Process Cloud IP Data
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: 📥 Checkout repository
         uses: actions/checkout@v4
-      
-      - name: Install xmllint
-        run: sudo apt-get update && sudo apt-get install libxml2-utils jq
 
-      - name: Install DuckDB
+      - name: 🛠️ Install dependencies (xmllint, jq)
+        shell: bash --noprofile --norc -euo pipefail
+        run: sudo apt-get update && sudo apt-get install -y libxml2-utils jq
+
+      - name: 🐥 Install DuckDB CLI
+        shell: bash --noprofile --norc -euo pipefail
         run: bash scripts/01_install_duckdb.sh
 
-      - name: Download cloud provider datasets and create DuckDB tables
+      - name: 📥 Download cloud provider datasets
+        shell: bash --noprofile --norc -euo pipefail
         run: bash scripts/02_download_data.sh
 
-      - name: Export provider data
+      - name: 🗃️ Export provider-specific data
+        shell: bash --noprofile --norc -euo pipefail
         run: bash scripts/03_export_provider_data.sh
 
-      - name: Create DuckDB database
+      - name: 🛠️ Create DuckDB database with processed data
+        shell: bash --noprofile --norc -euo pipefail
         run: bash scripts/04_create_database.sh
-      
-      - name: Check for changes
-        id: check
+
+      - name: 🔍 Check for changes in data files
+        id: check_changes
+        shell: bash --noprofile --norc -euo pipefail
+        run: |
+          git config --global user.name 'GitHub Actions Bot'
+          git config --global user.email 'actions@github.com'
+
+          git add .
+
+          if git diff --cached --quiet; then
+            echo "changed=false" >> "$GITHUB_ENV"
+          else
+            echo "changed=true" >> "$GITHUB_ENV"
+          fi
+
+      - name: 🚀 Commit and push updated data (if any)
+        if: env.changed == 'true'
+        shell: bash --noprofile --norc -euo pipefail
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          git config --global user.name 'GitHub Action'
-          git config --global user.email 'danilabs@users.noreply.github.com'
-          git remote set-url --push origin https://danilabs:$GITHUB_TOKEN@github.com/danilabs/public-cloud-provider-ip-ranges/
-          git add .
-          # Check for changes
-          git diff-index --cached --quiet HEAD || echo '::set-output name=changed::true'
-
-      - name: Eventually publish new data
-        if: ${{ steps.check.outputs.changed == 'true' }}
-        run: |
-          git commit -am "[no ci] Data update on $(date '+%FT%H:%M:%S')"
+          git commit -m "[no ci] Data update on $(date --utc +'%Y-%m-%dT%H:%M:%SZ')"
           git push
