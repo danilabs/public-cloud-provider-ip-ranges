@@ -3,7 +3,7 @@ CREATE VIEW ip_data AS (
   UNION ALL
   SELECT 'Azure' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM azure_ip_data
   UNION ALL
-  SELECT 'CloudFlare' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM cloudflare_ip_data
+  SELECT 'Cloudflare' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM cloudflare_ip_data
   UNION ALL
   SELECT 'DigitalOcean' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM digitalocean_ip_data
   UNION ALL
@@ -17,7 +17,7 @@ CREATE VIEW ip_data AS (
   UNION ALL
   SELECT 'Vercel' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM vercel_ip_data
   UNION ALL
-  SELECT 'IBM' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM ibm_ip_data
+  SELECT 'IBM Cloud' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM ibm_ip_data
   UNION ALL
   SELECT 'Clever Cloud' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM clevercloud_ip_data
   UNION ALL

@@ -3,8 +3,7 @@
 set -euo pipefail
 
 # Variables
-DATE_STR=$(date '+%F')
-DATA_PATH="/tmp/duckdb-database-${DATE_STR}.duckdb"
+DATA_PATH="/tmp/duckdb-database.duckdb"
 TMP_DIR=$(mktemp -d)
 AZURE_HTML="${TMP_DIR}/azure.html"
 AZURE_SQL_TEMP="queries/providers/azure.current.sql"
@@ -46,6 +45,12 @@ cp data/clevercloud_ips.txt /tmp/clevercloud_ips.txt
 echo "📥 Moving Outscale IPs..."
 cp data/outscale_ips.txt /tmp/outscale_ips.txt
 
+# Remove any existing database
+if [[ -f "$DATA_PATH" ]]; then
+  echo "🧹 Removing existing database at $DATA_PATH"
+  rm -f "$DATA_PATH"
+fi
+
 echo "🧩 Installing httpfs extension..."
 duckdb "$DATA_PATH" < queries/install_extensions.sql
 
@@ -54,12 +59,15 @@ echo "📦 Loading public cloud provider data..."
 declare -a PROVIDERS=(
   aws
   azure.current
+  clevercloud
   cloudflare
   digitalocean
   fastly
   googlecloud
+  ibm
   linode
   oracle
+  outscale
   vercel
 )
 

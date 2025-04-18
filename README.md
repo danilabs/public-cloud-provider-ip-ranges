@@ -6,7 +6,7 @@ The following public cloud providers are covered by this repo:
 
 * [AWS](https://ip-ranges.amazonaws.com/ip-ranges.json)
 * [Azure](https://download.microsoft.com/download/7/1/D/71D86715-5596-4529-9B13-DA13A5DE5B63/ServiceTags_Public_20230508.json)
-* [CloudFlare](https://www.cloudflare.com/ips-v4)
+* [Cloudflare](https://www.cloudflare.com/ips-v4)
 * [DigitalOcean](https://digitalocean.com/geo/google.csv)
 * [Fastly](https://api.fastly.com/public-ip-list)
 * [Google Cloud](https://www.gstatic.com/ipranges/cloud.json)
@@ -41,7 +41,7 @@ SELECT * FROM ip.ip_data;
 ### Single providers
 * AWS: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/aws.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/aws.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/aws.json)
 * Azure: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/azure.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/azure.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/azure.json)
-* CloudFlare: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/cloudflare.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/cloudflare.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/cloudflare.json)
+* Cloudflare: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/cloudflare.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/cloudflare.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/cloudflare.json)
 * DigitalOcean: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/digitalocean.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/digitalocean.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/digitalocean.json)
 * Fastly: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/fastly.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/fastly.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/fastly.json)
 * Google Cloud: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/googlecloud.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/googlecloud.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/googlecloud.json)

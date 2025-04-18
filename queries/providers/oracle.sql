@@ -5,7 +5,7 @@ CREATE TABLE oracle_ip_data AS (
     CAST(STR_SPLIT(prefixes.cidr, '/')[2] AS INTEGER) AS ip_address_mask,
     CAST(pow(2, 32-CAST(STR_SPLIT(prefixes.cidr, '/')[2] AS INTEGER)) AS INTEGER) AS ip_address_cnt,
     CASE
-      WHEN region = '' THEN 'No region'
+      WHEN region = '' THEN 'no-region'
       ELSE region
     END AS region
   FROM (

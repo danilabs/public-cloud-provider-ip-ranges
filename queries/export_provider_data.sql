@@ -10,8 +10,8 @@ COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Azure' ORDER BY cloud_provid
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Azure' ORDER BY cloud_provider, cidr_block) TO 'data/providers/azure.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
 COPY (SELECT * FROM azure_ip_data) TO 'data/providers/azure.json' (ARRAY true);
 
-COPY (SELECT * FROM ip_data WHERE cloud_provider = 'CloudFlare' ORDER BY cloud_provider, cidr_block) TO 'data/providers/cloudflare.csv' WITH (HEADER 1, DELIMITER ',');
-COPY (SELECT * FROM ip_data WHERE cloud_provider = 'CloudFlare' ORDER BY cloud_provider, cidr_block) TO 'data/providers/cloudflare.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Cloudflare' ORDER BY cloud_provider, cidr_block) TO 'data/providers/cloudflare.csv' WITH (HEADER 1, DELIMITER ',');
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Cloudflare' ORDER BY cloud_provider, cidr_block) TO 'data/providers/cloudflare.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
 COPY (SELECT * FROM cloudflare_ip_data) TO 'data/providers/cloudflare.json' (ARRAY true);
 
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'DigitalOcean' ORDER BY cloud_provider, cidr_block) TO 'data/providers/digitalocean.csv' WITH (HEADER 1, DELIMITER ',');
@@ -38,14 +38,14 @@ COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Vercel' ORDER BY cloud_provi
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Vercel' ORDER BY cloud_provider, cidr_block) TO 'data/providers/vercel.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
 COPY (SELECT * FROM vercel_ip_data) TO 'data/providers/vercel.json' (ARRAY true);
 
-COPY (SELECT * FROM ip_data WHERE cloud_provider = 'IBM' ORDER BY cloud_provider, cidr_block) TO 'data/providers/ibm.csv' WITH (HEADER 1, DELIMITER ',');
-COPY (SELECT * FROM ip_data WHERE cloud_provider = 'IBM' ORDER BY cloud_provider, cidr_block) TO 'data/providers/ibm.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'IBM Cloud' ORDER BY cloud_provider, cidr_block) TO 'data/providers/ibm.csv' WITH (HEADER 1, DELIMITER ',');
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'IBM Cloud' ORDER BY cloud_provider, cidr_block) TO 'data/providers/ibm.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
 COPY (SELECT * FROM ibm_ip_data) TO 'data/providers/ibm.json' (ARRAY true);
 
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Clever Cloud' ORDER BY cloud_provider, cidr_block) TO 'data/providers/clevercloud.csv' WITH (HEADER 1, DELIMITER ',');
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Clever Cloud' ORDER BY cloud_provider, cidr_block) TO 'data/providers/clevercloud.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
 COPY (SELECT * FROM clevercloud_ip_data) TO 'data/providers/clevercloud.json' (ARRAY true);
 
-COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Outscale' ORDER BY cloud_provider, 
-COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Outscale' ORDER BY cloud_provider, 
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Outscale' ORDER BY cloud_provider, cidr_block) TO 'data/providers/outscale.csv' WITH (HEADER 1, DELIMITER ',');
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Outscale' ORDER BY cloud_provider, cidr_block) TO 'data/providers/outscale.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
 COPY (SELECT * FROM outscale_ip_data) TO 'data/providers/outscale.json' (ARRAY true);

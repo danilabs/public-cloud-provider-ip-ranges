@@ -3,8 +3,7 @@
 set -euo pipefail
 
 # Constants
-DATE_STR=$(date '+%F')
-DATA_PATH="/tmp/duckdb-database-${DATE_STR}.duckdb"
+DATA_PATH="/tmp/duckdb-database.duckdb"
 SQL_FILE="queries/create_database.sql"
 
 echo "🗃️  Creating new DuckDB database..."
@@ -24,5 +23,6 @@ fi
 # Run the SQL script to create the database
 echo "🏗️  Initializing database schema from $SQL_FILE"
 duckdb "$DATA_PATH" < "$SQL_FILE"
+cp $DATA_PATH $PWD/data/db/
 
 echo "✅ Database created successfully at $DATA_PATH"

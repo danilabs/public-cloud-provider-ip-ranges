@@ -5,7 +5,7 @@ CREATE TABLE azure_ip_data AS (
     ip_address_mask,
     ip_address_cnt,
     CASE
-      WHEN region = '' THEN 'No region'
+      WHEN region = '' THEN 'no-region'
       ELSE region
     END AS region
   FROM (

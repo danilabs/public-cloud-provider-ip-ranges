@@ -3,8 +3,7 @@
 set -euo pipefail
 
 # Variables
-DATE_STR=$(date '+%F')
-DATA_PATH="/tmp/duckdb-database-${DATE_STR}.duckdb"
+DATA_PATH="/tmp/duckdb-database.duckdb"
 EXPORT_QUERY="queries/export_provider_data.sql"
 
 echo "📤 Starting export of provider data..."
