@@ -1,4 +1,4 @@
-CREATE TABLE cloudflare_ip_data AS (
+CREATE TABLE ibm_ip_data AS (
   SELECT DISTINCT
     prefixes AS cidr_block,
     STR_SPLIT(prefixes, '/')[1] AS ip_address,
@@ -9,6 +9,8 @@ CREATE TABLE cloudflare_ip_data AS (
     SELECT
       prefixes
     FROM
-      read_csv_auto('/tmp/cloudflare.txt', columns = {'prefixes': 'VARCHAR'}, ignore_errors = true)
+      read_csv_auto('/tmp/ibm_ips.txt', columns = {'prefixes': 'VARCHAR'}, ignore_errors = true)
   )
 );
+
+--https://cloud.ibm.com/docs/infrastructure-hub?topic=infrastructure-hub-ibm-cloud-ip-ranges

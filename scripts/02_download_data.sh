@@ -26,7 +26,6 @@ echo "🔗 Azure IP URL: $AZURE_URL"
 echo "📝 Populating Azure SQL file..."
 sed "s|###AZURE_URL###|$AZURE_URL|" queries/providers/azure.sql > "$AZURE_SQL_TEMP"
 
-
 # Special handling for Cloudflare since it must be downloaded first
 echo "📥 Downloading Cloudflare IPs..."
 curl -sSL -H "User-Agent: $UA" https://www.cloudflare.com/ips-v4 -o /tmp/cloudflare.txt
@@ -34,6 +33,18 @@ curl -sSL -H "User-Agent: $UA" https://www.cloudflare.com/ips-v4 -o /tmp/cloudfl
 # Downloading for Vercel
 echo "📥 Moving Vercel IPs..."
 cp data/vercel_ips.txt /tmp/vercel_ips.txt
+
+# Downloading for IBM
+echo "📥 Moving IBM IPs..."
+cp data/ibm_ips.txt /tmp/ibm_ips.txt
+
+# Downloading for Clevercloud
+echo "📥 Moving Clever Cloud IPs..."
+cp data/clevercloud_ips.txt /tmp/clevercloud_ips.txt
+
+# Downloading for Outscale
+echo "📥 Moving Outscale IPs..."
+cp data/outscale_ips.txt /tmp/outscale_ips.txt
 
 echo "🧩 Installing httpfs extension..."
 duckdb "$DATA_PATH" < queries/install_extensions.sql
