@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '0 4 * * *'
+    - cron: '0 4 * * *'  # Every day at 04:00 UTC
 
 permissions:
-  contents: write  # only content write for commits
-  actions: read    # minimal for workflows
+  contents: write   # only for committing new files
+  actions: read
 
 concurrency:
   group: data-gathering
@@ -24,29 +24,41 @@ jobs:
         uses: actions/checkout@v4
 
       - name: 🛠️ Install dependencies (xmllint, jq)
-        shell: bash --noprofile --norc -euo pipefail
-        run: sudo apt-get update && sudo apt-get install -y libxml2-utils jq
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update
+          sudo apt-get install -y libxml2-utils jq
 
       - name: 🐥 Install DuckDB CLI
-        shell: bash --noprofile --norc -euo pipefail
-        run: bash scripts/01_install_duckdb.sh
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash scripts/01_install_duckdb.sh
 
       - name: 📥 Download cloud provider datasets
-        shell: bash --noprofile --norc -euo pipefail
-        run: bash scripts/02_download_data.sh
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash scripts/02_download_data.sh
 
       - name: 🗃️ Export provider-specific data
-        shell: bash --noprofile --norc -euo pipefail
-        run: bash scripts/03_export_provider_data.sh
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash scripts/03_export_provider_data.sh
 
       - name: 🛠️ Create DuckDB database with processed data
-        shell: bash --noprofile --norc -euo pipefail
-        run: bash scripts/04_create_database.sh
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash scripts/04_create_database.sh
 
       - name: 🔍 Check for changes in data files
         id: check_changes
-        shell: bash --noprofile --norc -euo pipefail
+        shell: bash
         run: |
+          set -euo pipefail
           git config --global user.name 'GitHub Actions Bot'
           git config --global user.email 'actions@github.com'
 
@@ -60,9 +72,10 @@ jobs:
 
       - name: 🚀 Commit and push updated data (if any)
         if: env.changed == 'true'
-        shell: bash --noprofile --norc -euo pipefail
+        shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
           git commit -m "[no ci] Data update on $(date --utc +'%Y-%m-%dT%H:%M:%SZ')"
           git push
