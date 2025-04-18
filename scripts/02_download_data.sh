@@ -14,7 +14,7 @@ echo "📥 Downloading Azure IP page..."
 curl -sSL -H "User-Agent: $UA" "https://www.microsoft.com/en-US/download/details.aspx?id=56519" -o "$AZURE_HTML"
 
 echo "🔍 Extracting Azure IP file URL..."
-AZURE_URL=$(xmllint --html -xpath '//a[@data-bi-id="downloadretry"]/attribute::href' "$AZURE_HTML" 2>/dev/null | sed 's/ href="\([^"]*\)"/\1/g')
+AZURE_URL=$(xmllint --html -xpath "//html/body/div[3]/div/div[2]/main/div/div[1]/div/div/div/section[3]/div/div/div/div/div/a/@href" "$AZURE_HTML" 2>/dev/null | sed 's/ href="\([^"]*\)"/\1\n/g')
 
 if [[ -z "$AZURE_URL" ]]; then
   echo "❌ Failed to extract Azure URL from HTML"
@@ -25,6 +25,15 @@ echo "🔗 Azure IP URL: $AZURE_URL"
 
 echo "📝 Populating Azure SQL file..."
 sed "s|###AZURE_URL###|$AZURE_URL|" queries/providers/azure.sql > "$AZURE_SQL_TEMP"
+
+
+# Special handling for Cloudflare since it must be downloaded first
+echo "📥 Downloading Cloudflare IPs..."
+curl -sSL -H "User-Agent: $UA" https://www.cloudflare.com/ips-v4 -o /tmp/cloudflare.txt
+
+# Downloading for Vercel
+echo "📥 Moving Vercel IPs..."
+cp data/vercel_ips.txt /tmp/vercel_ips.txt
 
 echo "🧩 Installing httpfs extension..."
 duckdb "$DATA_PATH" < queries/install_extensions.sql
@@ -40,11 +49,8 @@ declare -a PROVIDERS=(
   googlecloud
   linode
   oracle
+  vercel
 )
-
-# Special handling for Cloudflare since it must be downloaded first
-echo "📥 Downloading Cloudflare IPs..."
-curl -sSL -H "User-Agent: $UA" https://www.cloudflare.com/ips-v4 -o /tmp/cloudflare.txt
 
 for provider in "${PROVIDERS[@]}"; do
   echo "➡️  Loading $provider..."

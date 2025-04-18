@@ -3,15 +3,11 @@
 set -euo pipefail
 
 # Constants
-DB_DIR="$PWD/data/db"
-DATA_PATH="$DB_DIR/ip-ranges.duckdb"
+DATE_STR=$(date '+%F')
+DATA_PATH="/tmp/duckdb-database-${DATE_STR}.duckdb"
 SQL_FILE="queries/create_database.sql"
 
 echo "🗃️  Creating new DuckDB database..."
-
-# Create directory if it doesn't exist
-echo "📁 Ensuring database directory exists at $DB_DIR"
-mkdir -p "$DB_DIR"
 
 # Remove any existing database
 if [[ -f "$DATA_PATH" ]]; then

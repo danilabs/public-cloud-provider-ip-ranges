@@ -14,4 +14,6 @@ CREATE VIEW ip_data AS (
   SELECT 'Linode' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM linode_ip_data
   UNION ALL
   SELECT 'Oracle' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM oracle_ip_data
+  UNION ALL
+  SELECT 'Vercel' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM vercel_ip_data
 );

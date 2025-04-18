@@ -28,8 +28,12 @@ COPY (SELECT * FROM google_ip_data) TO 'data/providers/googlecloud.json' (ARRAY 
 
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Linode' ORDER BY cloud_provider, cidr_block) TO 'data/providers/linode.csv' WITH (HEADER 1, DELIMITER ',');
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Linode' ORDER BY cloud_provider, cidr_block) TO 'data/providers/linode.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
-COPY (SELECT * FROM oracle_ip_data) TO 'data/providers/linode.json' (ARRAY true);
+COPY (SELECT * FROM linode_ip_data) TO 'data/providers/linode.json' (ARRAY true);
 
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Oracle' ORDER BY cloud_provider, cidr_block) TO 'data/providers/oracle.csv' WITH (HEADER 1, DELIMITER ',');
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Oracle' ORDER BY cloud_provider, cidr_block) TO 'data/providers/oracle.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
 COPY (SELECT * FROM oracle_ip_data) TO 'data/providers/oracle.json' (ARRAY true);
+
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Vercel' ORDER BY cloud_provider, cidr_block) TO 'data/providers/vercel.csv' WITH (HEADER 1, DELIMITER ',');
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Vercel' ORDER BY cloud_provider, cidr_block) TO 'data/providers/vercel.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
+COPY (SELECT * FROM vercel_ip_data) TO 'data/providers/vercel.json' (ARRAY true);
