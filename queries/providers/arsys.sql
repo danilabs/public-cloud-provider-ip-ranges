@@ -9,6 +9,6 @@ CREATE TABLE arsys_ip_data AS (
     SELECT
       prefixes
     FROM
-      read_csv_auto('/tmp/arsys.txt', columns = {'prefixes': 'VARCHAR'}, ignore_errors = true)
+      read_csv_auto('/tmp/arsys_ips.txt', columns = {'prefixes': 'VARCHAR'}, ignore_errors = true)
   )
 );
