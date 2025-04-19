@@ -45,6 +45,10 @@ cp data/clevercloud_ips.txt /tmp/clevercloud_ips.txt
 echo "📥 Moving Outscale IPs..."
 cp data/outscale_ips.txt /tmp/outscale_ips.txt
 
+# Downloading for WP Engine
+echo "📥 Moving WP Engine IPs..."
+cp data/wpengine_ips.txt /tmp/wpengine_ips.txt
+
 # Remove any existing database
 if [[ -f "$DATA_PATH" ]]; then
   echo "🧹 Removing existing database at $DATA_PATH"
