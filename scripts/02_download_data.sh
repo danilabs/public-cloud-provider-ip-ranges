@@ -27,7 +27,11 @@ sed "s|###AZURE_URL###|$AZURE_URL|" queries/providers/azure.sql > "$AZURE_SQL_TE
 
 # Special handling for Cloudflare since it must be downloaded first
 echo "📥 Downloading Cloudflare IPs..."
-curl -sSL -H "User-Agent: $UA" https://www.cloudflare.com/ips-v4 -o /tmp/cloudflare.txt
+curl -sSL -H "User-Agent: $UA" https://www.cloudflare.com/ips-v4 -o /tmp/cloudflare_ips.txt
+
+# Special handling for Vultr since it must be downloaded first
+echo "📥 Downloading Vultr IPs..."
+curl -sSL -H "User-Agent: $UA" 'https://geofeed.constant.com/?text' -o /tmp/vultr_ips.txt
 
 # Downloading for Vercel
 echo "📥 Moving Vercel IPs..."
@@ -73,6 +77,8 @@ declare -a PROVIDERS=(
   oracle
   outscale
   vercel
+  vultr
+  wpengine
 )
 
 for provider in "${PROVIDERS[@]}"; do

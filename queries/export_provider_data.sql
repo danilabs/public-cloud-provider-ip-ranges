@@ -53,3 +53,7 @@ COPY (SELECT * FROM outscale_ip_data) TO 'data/providers/outscale.json' (ARRAY t
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'WPEngine' ORDER BY cloud_provider, cidr_block) TO 'data/providers/wpengine.csv' WITH (HEADER 1, DELIMITER ',');
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'WPEngine' ORDER BY cloud_provider, cidr_block) TO 'data/providers/wpengine.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
 COPY (SELECT * FROM wpengine_ip_data) TO 'data/providers/wpengine.json' (ARRAY true);
+
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Vultr' ORDER BY cloud_provider, cidr_block) TO 'data/providers/vultr.csv' WITH (HEADER 1, DELIMITER ',');
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Vultr' ORDER BY cloud_provider, cidr_block) TO 'data/providers/vultr.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
+COPY (SELECT * FROM vultr_ip_data) TO 'data/providers/vultr.json' (ARRAY true);
