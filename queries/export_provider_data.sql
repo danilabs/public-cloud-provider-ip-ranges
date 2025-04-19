@@ -57,3 +57,7 @@ COPY (SELECT * FROM wpengine_ip_data) TO 'data/providers/wpengine.json' (ARRAY t
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Vultr' ORDER BY cloud_provider, cidr_block) TO 'data/providers/vultr.csv' WITH (HEADER 1, DELIMITER ',');
 COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Vultr' ORDER BY cloud_provider, cidr_block) TO 'data/providers/vultr.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
 COPY (SELECT * FROM vultr_ip_data) TO 'data/providers/vultr.json' (ARRAY true);
+
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Arsys' ORDER BY cloud_provider, cidr_block) TO 'data/providers/arsys.csv' WITH (HEADER 1, DELIMITER ',');
+COPY (SELECT * FROM ip_data WHERE cloud_provider = 'Arsys' ORDER BY cloud_provider, cidr_block) TO 'data/providers/arsys.parquet' (FORMAT 'parquet', COMPRESSION 'SNAPPY');
+COPY (SELECT * FROM arsys_ip_data) TO 'data/providers/arsys.json' (ARRAY true);

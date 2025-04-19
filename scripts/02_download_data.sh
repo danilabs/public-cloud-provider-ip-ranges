@@ -56,6 +56,10 @@ cp data/outscale_ips.txt /tmp/outscale_ips.txt
 echo "📥 Moving WP Engine IPs..."
 cp data/wpengine_ips.txt /tmp/wpengine_ips.txt
 
+# Downloading for Arsys
+echo "📥 Moving Arsys IPs..."
+cp data/arsys_ips.txt /tmp/arsys_ips.txt
+
 # Remove any existing database
 if [[ -f "$DATA_PATH" ]]; then
   echo "🧹 Removing existing database at $DATA_PATH"
@@ -68,6 +72,7 @@ duckdb "$DATA_PATH" < queries/install_extensions.sql
 echo "📦 Loading public cloud provider data..."
 
 declare -a PROVIDERS=(
+  arsys
   aws
   azure.current
   clevercloud

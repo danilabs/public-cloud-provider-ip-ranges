@@ -54,7 +54,7 @@ SELECT * FROM ip.ip_data;
 * Outscale: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/outscale.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/outscale.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/outscale.json)
 * WPEngine: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/wpengine.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/wpengine.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/wpengine.json)
 * Vultr: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/vultr.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/vultr.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/vultr.json)
-
+* Arsys: [CSV](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/arsys.csv) / [Parquet](https://github.com/danilabs/public-cloud-provider-ip-ranges/raw/main/data/providers/arsys.parquet) / [JSON](https://raw.githubusercontent.com/danilabs/public-cloud-provider-ip-ranges/main/data/providers/arsys.json)
 
 ## Data format
 There are three versions of each dataset, a CSV and a Parquet version in columnar style, and a JSON version.

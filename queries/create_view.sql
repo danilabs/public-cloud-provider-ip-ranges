@@ -26,4 +26,6 @@ CREATE VIEW ip_data AS (
   SELECT 'WPEngine' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM wpengine_ip_data
   UNION ALL
   SELECT 'Vultr' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM vultr_ip_data
+  UNION ALL
+  SELECT 'Arsys' as cloud_provider, cidr_block, ip_address, ip_address_mask, ip_address_cnt, region FROM arsys_ip_data
 );
