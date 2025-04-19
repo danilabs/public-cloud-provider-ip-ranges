@@ -30,8 +30,11 @@ echo "📥 Downloading Cloudflare IPs..."
 curl -sSL -H "User-Agent: $UA" https://www.cloudflare.com/ips-v4 -o /tmp/cloudflare_ips.txt
 
 # Special handling for Vultr since it must be downloaded first
-echo "📥 Downloading Vultr IPs..."
-curl -sSL -H "User-Agent: $UA" 'https://geofeed.constant.com/?text' -o /tmp/vultr_ips.txt
+# echo "📥 Downloading Vultr IPs..."
+# curl -sSL -H "User-Agent: $UA" 'https://geofeed.constant.com/?text' -o /tmp/vultr_ips.txt
+
+echo "📥 Moving Vultr IPs..."
+cp data/vultr_ips.txt /tmp/vultr_ips.txt
 
 # Downloading for Vercel
 echo "📥 Moving Vercel IPs..."
