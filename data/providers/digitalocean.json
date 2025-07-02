@@ -851,6 +851,8 @@
 	{"cidr_block":"129.212.160.0/22","ip_address":"129.212.160.0","ip_address_mask":22,"ip_address_cnt":1024,"region":"GB-SLG"},
 	{"cidr_block":"129.212.164.0/22","ip_address":"129.212.164.0","ip_address_mask":22,"ip_address_cnt":1024,"region":"US-CA"},
 	{"cidr_block":"129.212.168.0/22","ip_address":"129.212.168.0","ip_address_mask":22,"ip_address_cnt":1024,"region":"DE-HE"},
+	{"cidr_block":"129.212.172.0/23","ip_address":"129.212.172.0","ip_address_mask":23,"ip_address_cnt":512,"region":"US-NJ"},
+	{"cidr_block":"129.212.176.0/20","ip_address":"129.212.176.0","ip_address_mask":20,"ip_address_cnt":4096,"region":"US-GA"},
 	{"cidr_block":"134.122.80.0/20","ip_address":"134.122.80.0","ip_address_mask":20,"ip_address_cnt":4096,"region":"DE-HE"},
 	{"cidr_block":"134.122.96.0/20","ip_address":"134.122.96.0","ip_address_mask":20,"ip_address_cnt":4096,"region":"GB-SLG"},
 	{"cidr_block":"134.199.130.0/23","ip_address":"134.199.130.0","ip_address_mask":23,"ip_address_cnt":512,"region":"US-GA"},
