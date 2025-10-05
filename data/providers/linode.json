@@ -1145,6 +1145,8 @@
 	{"cidr_block":"172.239.152.0/24","ip_address":"172.239.152.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
 	{"cidr_block":"172.239.154.0/24","ip_address":"172.239.154.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
 	{"cidr_block":"172.239.158.0/24","ip_address":"172.239.158.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
+	{"cidr_block":"172.235.124.0/24","ip_address":"172.235.124.0","ip_address_mask":24,"ip_address_cnt":256,"region":null},
+	{"cidr_block":"172.235.125.0/24","ip_address":"172.235.125.0","ip_address_mask":24,"ip_address_cnt":256,"region":null},
 	{"cidr_block":"72.14.183.0/24","ip_address":"72.14.183.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-TX"},
 	{"cidr_block":"72.14.189.0/24","ip_address":"72.14.189.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-TX"},
 	{"cidr_block":"69.164.192.0/24","ip_address":"69.164.192.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-TX"},
@@ -2277,6 +2279,7 @@
 	{"cidr_block":"172.239.145.0/24","ip_address":"172.239.145.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
 	{"cidr_block":"172.239.155.0/24","ip_address":"172.239.155.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
 	{"cidr_block":"172.239.156.0/24","ip_address":"172.239.156.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
+	{"cidr_block":"172.235.123.0/24","ip_address":"172.235.123.0","ip_address_mask":24,"ip_address_cnt":256,"region":null},
 	{"cidr_block":"72.14.176.0/24","ip_address":"72.14.176.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-TX"},
 	{"cidr_block":"72.14.182.0/24","ip_address":"72.14.182.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-TX"},
 	{"cidr_block":"72.14.185.0/24","ip_address":"72.14.185.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-TX"},
@@ -4581,5 +4584,6 @@
 	{"cidr_block":"172.239.147.0/24","ip_address":"172.239.147.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
 	{"cidr_block":"172.239.149.0/24","ip_address":"172.239.149.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
 	{"cidr_block":"172.239.151.0/24","ip_address":"172.239.151.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
-	{"cidr_block":"172.239.157.0/24","ip_address":"172.239.157.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"}
+	{"cidr_block":"172.239.157.0/24","ip_address":"172.239.157.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
+	{"cidr_block":"172.235.122.0/24","ip_address":"172.235.122.0","ip_address_mask":24,"ip_address_cnt":256,"region":null}
 ]
