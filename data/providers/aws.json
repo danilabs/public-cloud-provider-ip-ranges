@@ -4805,6 +4805,7 @@
 	{"cidr_block":"16.51.30.0/23","ip_address":"16.51.30.0","ip_address_mask":23,"ip_address_cnt":512,"region":"ap-southeast-4"},
 	{"cidr_block":"43.216.63.0/24","ip_address":"43.216.63.0","ip_address_mask":24,"ip_address_cnt":256,"region":"ap-southeast-5"},
 	{"cidr_block":"43.217.174.0/23","ip_address":"43.217.174.0","ip_address_mask":23,"ip_address_cnt":512,"region":"ap-southeast-5"},
+	{"cidr_block":"56.68.36.0/23","ip_address":"56.68.36.0","ip_address_mask":23,"ip_address_cnt":512,"region":"ap-southeast-5"},
 	{"cidr_block":"3.102.47.0/24","ip_address":"3.102.47.0","ip_address_mask":24,"ip_address_cnt":256,"region":"ap-southeast-6"},
 	{"cidr_block":"3.102.52.0/24","ip_address":"3.102.52.0","ip_address_mask":24,"ip_address_cnt":256,"region":"ap-southeast-6"},
 	{"cidr_block":"3.102.59.0/24","ip_address":"3.102.59.0","ip_address_mask":24,"ip_address_cnt":256,"region":"ap-southeast-6"},
