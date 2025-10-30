@@ -1936,6 +1936,8 @@
 	{"cidr_block":"104.64.92.0/24","ip_address":"104.64.92.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
 	{"cidr_block":"104.64.94.0/24","ip_address":"104.64.94.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
 	{"cidr_block":"104.64.95.0/24","ip_address":"104.64.95.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
+	{"cidr_block":"172.235.126.0/24","ip_address":"172.235.126.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
+	{"cidr_block":"172.235.127.0/24","ip_address":"172.235.127.0","ip_address_mask":24,"ip_address_cnt":256,"region":"US-VA"},
 	{"cidr_block":"172.232.34.0/24","ip_address":"172.232.34.0","ip_address_mask":24,"ip_address_cnt":256,"region":"FR-IDF"},
 	{"cidr_block":"172.232.40.0/24","ip_address":"172.232.40.0","ip_address_mask":24,"ip_address_cnt":256,"region":"FR-IDF"},
 	{"cidr_block":"172.232.41.0/24","ip_address":"172.232.41.0","ip_address_mask":24,"ip_address_cnt":256,"region":"FR-IDF"},
