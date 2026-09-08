@@ -7313,6 +7313,7 @@
 	{"cidr_block":"3.254.178.192/26","ip_address":"3.254.178.192","ip_address_mask":26,"ip_address_cnt":64,"region":"eu-west-1"},
 	{"cidr_block":"3.254.236.0/22","ip_address":"3.254.236.0","ip_address_mask":22,"ip_address_cnt":1024,"region":"eu-west-1"},
 	{"cidr_block":"40.180.9.0/25","ip_address":"40.180.9.0","ip_address_mask":25,"ip_address_cnt":128,"region":"eu-west-1"},
+	{"cidr_block":"51.24.220.0/23","ip_address":"51.24.220.0","ip_address_mask":23,"ip_address_cnt":512,"region":"eu-west-2"},
 	{"cidr_block":"13.37.1.64/26","ip_address":"13.37.1.64","ip_address_mask":26,"ip_address_cnt":64,"region":"eu-west-3"},
 	{"cidr_block":"13.39.224.0/23","ip_address":"13.39.224.0","ip_address_mask":23,"ip_address_cnt":512,"region":"eu-west-3"},
 	{"cidr_block":"15.188.210.128/26","ip_address":"15.188.210.128","ip_address_mask":26,"ip_address_cnt":64,"region":"eu-west-3"},
